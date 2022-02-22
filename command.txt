@@ -1,4 +1,4 @@
-// commands of git;
+// commands for git;
 
 // for intialisation of git repository...
 	git init
@@ -9,4 +9,41 @@
 // but the file you made doesnot saved to history of git. so... to add it...
 	git add command.txt      // to add that file.
 	git add .               // to add every file in that directory.
+// to commit a file....
+	git commit -m "m for message if you want any"
+// to see the entire history...
+	git log    // for entire history of the commits.
+// to remove a file...
+	rm -rf command.txt
+// to delete a history (these are linked so you have to remove as per order, not anything from middle)...
+	git reset c9bffa3017e7545c95614e19a96e472e8c830c10       // hash code of that commit above which you want to remove the history.
+// to save it in another area and to not include in the status...
+	git stash
+// to show the item stored in the stash and added to the stage/status...
+	git stash pop
+// to clear the stash...
+	git stash clear    // now everything is gone permanently. nothing will left in stash.
+
+// so for linking the file with GitHub, we first have to go to github's dashboard(after signing in) then create new respority. after that name 
+// .. the repository and make it public or private as per your choice. then create the respository. URL will be created. like -- 'https://github.com/TonyStark-47/GitHub.git/'
+
+// now to attach the url to our file/project or local project ...
+	git remote add origin https://github.com/TonyStark-47/GitHub.git
+// here above remote means working with urls, add means to add a new url, origin means what is the name of the url that we are going to add
+// .. so there name of the url is origin, you can name it anything.
+
+// to see all the urls attached to the file/folder/project ...
+	git remote -v
+	
+// here we just connected the file with url, to view it on github, we have to share it by using...
+	git push origin master        // so here to which url you want to push i.e, origin and which branch you want to push i.e, master branch.
+	
+	// after you hit this command, then you have to enter your username of your github account.
+	// then password but it does not take it because rule is now changed, you have to use personal access token instead..
+	//.. which you will find in setting, then developer setting, then personal acess tokens then generate it by filling a form.
+	// so in the password section put this token .. then after pressing enter the file will be shared on the github repository.
+	// after refreshing github page you can see your file there.
+// command for remembring your tokens by your computer...
+	git config --global credential.helper cache
+
 
